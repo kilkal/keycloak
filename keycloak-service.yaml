@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: keycloak
+  namespace: keycloak
+spec:
+  type: NodePort  # Hoặc LoadBalancer nếu bạn đang sử dụng dịch vụ cloud
+  ports:
+  - port: 9090        # Cổng bên ngoài
+    targetPort: 8080  # Cổng mà Keycloak đang lắng nghe
+    nodePort: 30090    # Cổng tùy chọn để truy cập từ bên ngoài
+  selector:
+    app: keycloak
