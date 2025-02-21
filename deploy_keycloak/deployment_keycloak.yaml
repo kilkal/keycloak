@@ -16,11 +16,11 @@ spec:
       containers:
       - name: keycloak
         image: quay.io/keycloak/keycloak:24.0.5
-          args: ["start-dev"]
+        args: ["start-dev"]
         ports:
         - containerPort: 8080
         env:
           - name: KEYCLOAK_ADMIN
-            value: admin
+            value: "admin"
           - name: KEYCLOAK_ADMIN_PASSWORD
-            value: admin
+            value: "admin"
